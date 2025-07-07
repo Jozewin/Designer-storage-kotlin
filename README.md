@@ -1,119 +1,94 @@
-![Language](https://img.shields.io/github/languages/top/msomu/base-mvvm-android-kt?color=B125EA&logo=kotlin&style=social)
-[![Owner](https://img.shields.io/badge/by-msomu-brightgreen?logo=github&style=social)](https://github.com/msomu)
-![License](https://img.shields.io/github/license/msomu/base-mvvm-android-kt.svg?style=social)
+# 📱 Designer Storage — Development Plan
 
-A robust foundation for modern Android applications, featuring a clean MVVM architecture with the latest Android development tools and best practices. Built to accelerate your development workflow while maintaining code quality and scalability.
+---
 
-> "Simplicity is the ultimate sophistication." - Leonardo da Vinci
+## 📌 Phase 1: Project Setup
 
-## 🎯 Features
+- Create New Android Project in Android Studio
+  - Use **Jetpack Compose** template
+  - Minimum SDK: **23 (Marshmallow)** or higher
+  - Set up app permissions:
+    - `CAMERA`
+    - `READ_EXTERNAL_STORAGE` (if targeting Android < 13)
+    - `READ_MEDIA_IMAGES` (Android 13+)
 
-- **Modern Architecture**
-  - MVVM (Model-View-ViewModel) design pattern
-  - Clean and scalable project structure
-  - Repository pattern for data management
-  - Dependency injection with Hilt
+---
 
-- **UI Components**
-  - 100% Jetpack Compose UI
-  - Material 3 design system
-  - Dark/Light theme support
-  - Responsive layouts
-  - Custom composable components
+## 📌 Phase 2: Setup Bottom Navigation
 
-- **Tech Stack**
-  - Kotlin Coroutines & Flow for async operations
-  - Jetpack Navigation for seamless navigation
-  - Retrofit & OkHttp for networking
-  - Kotlinx Serialization for JSON parsing
-  - Coil for image loading
-  - Unit testing setup with JUnit
+- Implement **Bottom Navigation** with 2 screens:
+  - 📸 **Camera**
+  - 🖼️ **Viewer**
+- Use **Navigation Compose** to navigate between them
 
-- **Development Tools**
-  - Gradle Kotlin DSL build scripts
-  - Version catalog for dependency management
-  - Detekt for static code analysis
-  - GitHub Actions CI/CD pipeline
-  - Dependabot integration
+---
 
-## 🚀 Getting Started
+## 📌 Phase 3: Implement Camera Functionality
 
-### Prerequisites
-- Android Studio Hedgehog or later
-- JDK 17
-- Android SDK with minimum API 24
+- Integrate Camera
+  - Use `ActivityResultContracts.TakePicture()` to capture image
+  - Save image to **Blouse folder** in app’s external files directory:  
+    `/Android/data/com.yourapp/files/Pictures/Blouse/`
+  - If folder doesn’t exist → create it
+- Show **"Take Photo" button** on Camera screen
 
-### Setup
-1. Click the "Use this template" button on GitHub
-2. Create a new repository from the template
-3. Clone the repository
-```bash
-git clone https://github.com/msomu/base-mvvm-android-kt.git
-```
+---
 
-4. Open the project in Android Studio
+## 📌 Phase 4: Viewer Screen Implementation
 
-5. Update the package name:
-  - Modify `namespace` in app/build.gradle.kts
-  - Update package structure in src/main/java/
-  - Change applicationId in app/build.gradle.kts
+- Load all images from **Blouse folder**
+  - List image files inside `/Pictures/Blouse/`
+  - Show images using `LazyVerticalGrid`
+- Add onClick for single image
+  - Tap image → navigate to **Photo Preview** screen
+  - Show image full-screen using `rememberAsyncImagePainter()`
 
-6. Configure your API endpoint:
-  - Create a `local.properties` file in the root directory
-  - Add your base URL: `BASE_URL=https://your-api-endpoint.com/`
+---
 
-7. Build and run the project
+## 📌 Phase 5: Single Image Sharing
 
-## 🏗️ Project Structure
+- In **Photo Preview screen**
+  - Add a **Share button** (`IconButton`)
+  - On click → Share image via `Intent.ACTION_SEND`
 
-```
-app/src/main/
-├── java/com/msomu/androidkt/
-│   ├── di/           # Dependency injection modules
-│   ├── model/        # Data models
-│   ├── network/      # API services and network utilities
-│   ├── presentation/ # UI components and ViewModels
-│   ├── repository/   # Data repositories
-│   └── utils/        # Utility classes
-└── res/              # Resources
-```
+---
 
-## 🧪 Testing
+## 📌 Phase 6: Multi-Select & Multiple Sharing
 
-The project includes both unit tests and instrumented tests:
+- In **Viewer screen**:
+  - Implement **long-press to select multiple images**
+  - Show checkboxes or selection overlays
+  - Show **"Share" icon button** when one or more images are selected
+- Use `Intent.ACTION_SEND_MULTIPLE` to share multiple images
 
-```bash
-# Run unit tests
-./gradlew test
+---
 
-# Run instrumentation tests
-./gradlew connectedAndroidTest
+## 📌 Phase 7: Polish UI and Error Handling
 
-# Run detekt analysis
-./gradlew detekt
-```
+- Handle cases:
+  - No images available → show **"No photos yet"**
+  - Camera permission denied → show a prompt
+- Add **loading indicators** while images are loading (if needed)
 
-## 🤝 Contributing
+---
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+## 📌 Phase 8: Testing
 
-## 📝 License
+- Test:
+  - Image capture flow
+  - Image storage in correct folder
+  - Single image sharing
+  - Multi-select sharing
+  - Folder creation and reading permissions
 
-Distributed under the MIT License. See `LICENSE` for more information.
+---
 
-## 📫 Contact
+## 📌 (Optional) Phase 9: Future Enhancements
 
-Somasundaram Mahesh - [@msomu](https://github.com/msomu)
+- Add option to **create custom folders**
+- Move images to other folders
+- Add a **search bar** in Viewer
+- Add **notes for each image**
+- Backup to **cloud storage**
 
-Project Link: [https://github.com/msomu/base-mvvm-android-kt](https://github.com/msomu/base-mvvm-android-kt)
-
-## 🙏 Acknowledgments
-
-- [Material Design 3](https://m3.material.io/)
-- [Jetpack Compose](https://developer.android.com/jetpack/compose)
-- [Android Architecture Components](https://developer.android.com/topic/architecture)
-- [kotlin-android-mvvm-template](https://github.com/its-me-debk007/kotlin-android-mvvm-template)
+---

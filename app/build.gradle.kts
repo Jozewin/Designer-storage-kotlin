@@ -15,11 +15,11 @@ detekt {
 }
 
 android {
-    namespace = "com.msomu.androidkt"
+    namespace = "com.josewin.designer_storage"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.msomu.androidkt"
+        applicationId = "com.josewin.designer_storage"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
@@ -72,12 +72,18 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     implementation(libs.hilt.android)
+    implementation(libs.accompanist.permissions)
+    implementation(libs.androidx.camera.core)
+    implementation(libs.androidx.camera.camera2)
+    implementation(libs.androidx.camera.lifecycle)
+    implementation(libs.androidx.camera.view)
+    implementation(libs.androidx.camera.extensions)
+    implementation(libs.androidx.concurrent.futures.ktx)
+    implementation(libs.androidx.exifinterface)
     ksp(libs.hilt.kapt)
     implementation(libs.hilt.navigation.compose)
     implementation(libs.navigation.compose)
     implementation(libs.coil)
-    implementation(libs.retrofit)
-    implementation(libs.okhttp)
     implementation(libs.logging.interceptor)
     implementation(libs.kotlinx.serialization.converter)
     implementation(libs.kotlinx.serialization.json)
