@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Snackbar
+import androidx.compose.material3.SnackbarDuration
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
@@ -32,6 +33,7 @@ import com.josewin.designer_storage.data.repository.CameraRepository
 import com.josewin.designer_storage.presentation.ui.components.CameraControls
 import com.josewin.designer_storage.presentation.ui.components.CameraPreview
 import com.josewin.designer_storage.presentation.viewmodel.CameraViewModel
+import kotlinx.coroutines.delay
 
 @Composable
 fun CameraScreen(paddingValues : PaddingValues) {
@@ -47,8 +49,10 @@ fun CameraScreen(paddingValues : PaddingValues) {
     // Handle success message
     LaunchedEffect(uiState.showSuccessMessage) {
         if (uiState.showSuccessMessage) {
-            snackbarHostState.showSnackbar("Photo saved successfully!")
+            snackbarHostState.showSnackbar("Photo saved successfully!", duration = SnackbarDuration.Short, withDismissAction = true)
+        //    delay(1L)
             viewModel.clearSuccessMessage()
+
         }
     }
 

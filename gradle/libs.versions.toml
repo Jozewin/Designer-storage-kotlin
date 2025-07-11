@@ -26,6 +26,7 @@ cameraView = "1.4.2"
 cameraExtensions = "1.4.2"
 concurrentFuturesKtx = "1.2.0"
 exifinterface = "1.4.1"
+foundation = "1.8.3"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -74,6 +75,7 @@ androidx-camera-view = { group = "androidx.camera", name = "camera-view", versio
 androidx-camera-extensions = { group = "androidx.camera", name = "camera-extensions", version.ref = "cameraExtensions" }
 androidx-concurrent-futures-ktx = { group = "androidx.concurrent", name = "concurrent-futures-ktx", version.ref = "concurrentFuturesKtx" }
 androidx-exifinterface = { group = "androidx.exifinterface", name = "exifinterface", version.ref = "exifinterface" }
+androidx-foundation = { group = "androidx.compose.foundation", name = "foundation", version.ref = "foundation" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

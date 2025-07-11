@@ -33,7 +33,4 @@ class CameraRepository(private val context: Context) {
         }
     }
 
-    fun getAllImages(): List<File> {
-        return FileUtils.getAllImagesFromBlouseFolder(context)
-    }
 }

@@ -27,25 +27,19 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        val localProperties = Properties()
-        val localPropertiesFile = rootProject.file("local.properties")
-
-        val baseUrl = if (localPropertiesFile.exists()) {
-            localProperties.load(localPropertiesFile.inputStream())
-            localProperties.getProperty("BASE_URL", "https://jsonplaceholder.typicode.com/")
-        } else {
-            "https://jsonplaceholder.typicode.com/"
-        }
-        buildConfigField("String", "BASE_URL", "\"${baseUrl}\"")
     }
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+        }
+
+        debug {
+
         }
     }
     compileOptions {
@@ -80,6 +74,7 @@ dependencies {
     implementation(libs.androidx.camera.extensions)
     implementation(libs.androidx.concurrent.futures.ktx)
     implementation(libs.androidx.exifinterface)
+    implementation(libs.androidx.foundation)
     ksp(libs.hilt.kapt)
     implementation(libs.hilt.navigation.compose)
     implementation(libs.navigation.compose)

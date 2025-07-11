@@ -23,4 +23,11 @@ sealed class Screen(
         title = "Viewer",
         icon = R.drawable.photo_frame
     )
+    object PhotoPreview : Screen(
+        route = "photo_preview/{imageIndex}",
+        title = "Photo Preview",
+        icon = -1
+    ) {
+        fun createRoute(imageIndex: Int) = "photo_preview/$imageIndex"
+    }
 }
