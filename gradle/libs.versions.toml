@@ -24,7 +24,7 @@ cameraCamera2 = "1.4.2"
 cameraLifecycle = "1.4.2"
 cameraView = "1.4.2"
 cameraExtensions = "1.4.2"
-concurrentFuturesKtx = "1.2.0"
+concurrentFuturesKtx = "1.3.0"
 exifinterface = "1.4.1"
 foundation = "1.8.3"
 
