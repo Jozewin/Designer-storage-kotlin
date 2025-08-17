@@ -142,7 +142,7 @@ Designer-storage-kotlin/
 ## 🎨 UI Components
 
 ### Camera Screen
-![Camera Screen](screenshots/camera_screen.png)
+![Camera Screen](screenshots/camera_screen.jpg)
 
 The main camera interface with professional controls and real-time preview.
 
@@ -154,7 +154,7 @@ The main camera interface with professional controls and real-time preview.
 - Permission handling integration
 
 ### Photo Viewer Screen
-![Viewer Screen](screenshots/viewer_screen.png)
+![Viewer Screen](screenshots/viewer_screen.jpg)
 
 Grid-based photo gallery for browsing captured images.
 
@@ -166,7 +166,7 @@ Grid-based photo gallery for browsing captured images.
 - Pull-to-refresh functionality
 
 ### Photo Preview Screen
-![Preview Screen](screenshots/photo_preview_screen.png)
+![Preview Screen](screenshots/photo_preview_screen.jpg)
 
 Full-screen photo viewing with sharing capabilities.
 
@@ -178,7 +178,7 @@ Full-screen photo viewing with sharing capabilities.
 - System UI integration
 
 ### Permission Handler
-![Permission Screen](screenshots/permission_screen.png)
+![Permission Screen](screenshots/permission_screen.jpg)
 
 Elegant permission request flow with clear explanations.
 
