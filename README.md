@@ -7,8 +7,6 @@
 
 A modern Android camera application built with **Jetpack Compose** and **Kotlin** for tailors and designers to capture, store, and manage their work photos. The app provides an intuitive interface for taking photos and organizing them in a dedicated storage system.
 
-![App Banner](screenshots/app_banner.png)
-
 ## 📱 Screenshots
 
 | Camera Screen | Photo Viewer | Photo Preview | Permission Screen |
