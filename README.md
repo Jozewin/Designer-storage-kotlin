@@ -13,7 +13,7 @@ A modern Android camera application built with **Jetpack Compose** and **Kotlin*
 
 | Camera Screen | Photo Viewer | Photo Preview | Permission Screen |
 |--------------|-------------|---------------|------------------|
-| ![Camera](screenshots/camera.jpeg) | ![Viewer](screenshots/gallery.jpeg) | ![Preview](screenshots/viewer.jpeg) | ![Permission](screenshots/cameraa.jpeg) |
+| ![Camera](screenshots/camera.jpg) | ![Viewer](screenshots/gallery.jpg) | ![Preview](screenshots/viewer.jpg) | ![Permission](screenshots/cameraa.jpg) |
 
 ## ✨ Features
 
